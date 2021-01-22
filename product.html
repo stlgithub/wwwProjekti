@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <!-- Bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+    <style>
+        #collapseMain, .collapseContent {
+            margin-top: 10px;
+        }
+
+        .collapseButton {
+            border-top: none; 
+            border-left: none;
+            border-right: none;
+            border-bottom-width: 2px;
+        }
+
+        /* Collapse buttons (Details, Reviews) styles when toggled on/off */
+        #collapseToggler[aria-expanded="true"] {
+            border-bottom-color: blueviolet;
+        }
+        #collapseToggler[aria-expanded="false"] {
+            border-bottom-color: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <div class="container">
+        <nav class="navbar navbar-light navbar-expand-sm bg-light">
+            <a class="navbar-brand" href="#">NAME/LOGO</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Content -->
+    <div class="container">
+        <div class="row">
+
+            <!-- Product images -->
+            <div class="col-md-6">
+                <div class="carousel slide" data-bs-ride="carousel" id="productSlides">
+                    <ol class="carousel-indicators">
+                        <li data-bs-target="#productSlides" data-bs-slide-to="0" class="active"></li>
+                        <li data-bs-target="#productSlides" data-bs-slide-to="1"></li>
+                        <li data-bs-target="#productSlides" data-bs-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="d-block img-fluid" src="img/placeholder.png" alt="Product image"/>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="img/placeholder.png" alt="Product image"/>
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block img-fluid" src="img/placeholder.png" alt="Product image"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product details -->
+            <div class="col-md-6">
+                <div class="d-flex flex-row flex-wrap">
+                    <h1 class="flex-grow-1">Product name</h1>
+                    <div class="totalStarRatings flex-shrink-1">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-half"></i>
+                        <i class="bi bi-star"></i>
+                        
+                        <small>
+                            <a href="#" data-bs-toggle="collapse" data-bs-target="#collapseReviews" aria-expanded="false" aria-controls="#collapeReviews">See reviews</a>
+                        </small>
+                    </div>
+                </div>
+               
+                <h2>Product price €</h2>
+                <p>Brief description<br>
+                    Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat.
+                </p>
+                
+                <button class="btn btn-outline-primary w-100">Add to cart</button>
+
+                <!-- Details and Reviews -->
+                <div id="collapseMain">
+                    <ul class="list-group list-group-horizontal">
+                        <li class="collapseButton list-group-item list-group-item-action text-center" data-bs-toggle="collapse" data-bs-target="#collapseDetails" aria-expanded="false" aria-controls="#collapseDetails" id="collapseToggler">Details</li>
+                        <li class="collapseButton list-group-item list-group-item-action text-center" data-bs-toggle="collapse" data-bs-target="#collapseReviews" aria-expanded="false" aria-controls="#collapseReviews" id="collapseToggler">Reviews</li>
+                    </ul>
+                    <div class="collapseContent">
+                        <div class="collapse" data-bs-parent="#collapseMain" id="collapseDetails">
+                            <h3>Product details</h3>
+                            <p>Details about the product<br>
+                                Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat.
+                            </p>
+                        </div>
+                        <div class="collapse" data-bs-parent="#collapseMain" id="collapseReviews">
+                            <article>
+                                <h3>Product reviews</h3>
+                                <div class="d-flex flex-row">
+                                    <img src="img/user_placeholder.jpg" width="25" height="25"/>
+                                    <small class="ms-2 align-self-center flex-grow-1">Username</small>
+                                    <small class="align-self-center ms-auto">21.1.2021</small>
+                                </div>
+                                <div class="d-flex flex-row">
+                                    <h5 class="flex-grow-1">Review header</h5>
+                                    <div class="reviewStarRatings ms-auto">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-half"></i>
+                                        <i class="bi bi-star"></i>
+                                    </div>
+                                </div>
+                                
+                                <p>Review content<br>
+                                    Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat.
+                                </p>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</body>
+</html>
