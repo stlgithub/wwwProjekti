@@ -44,7 +44,7 @@ input[type=text] {
       <!-- Navigation -->
       <div class="container">
         <nav class="navbar navbar-light navbar-expand-sm bg-light">
-            <a class="navbar-brand" href="index.html"><img src="img/logo.jpg" width="80" height="80"></a>
+            <a class="navbar-brand" href="index.html"><img src="img/logo.jpg" width="80" height="80" alt="logo"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -76,21 +76,30 @@ input[type=text] {
 
 
       <div class="col-sm-4" style="padding: 100px;">
-        <address style= "padding: 8px;">
-          <h2 style="text-align: center;"><b>Contact information</b></h2><br>
+        <h2 style="text-align: center;"><b>Contact information</b></h2><br>
+        <address style= "padding: 8px;">          
           <b>Address:</b><p> Yrityskatu 51, Suomi</p>
           <b>Puh:</b><p>012 3456789</p>
         </address>
       </div>
       
+<style>
+label{
+  font-weight: bold;
+}
+</style>
+
 
       <div class="col-sm-4" style=" padding: 100px;">
         <h2 style="text-align: center;"><b>Contact us</b></h2><br><br>
-          <label  for="inputEmail3" ><b>Email</b></label>
-          <input type="email" class="form-control" id="inputEmail3">
-          <label for="text" ><b>Text</b></label>
-          <input type="text" class="form-control" id="text">
-          <button type="submit" class="btn btn-primary"><b>Submit</b></button>
+          
+          <p><label> Name (required)<br />
+            <input type="text" name="your-name" value="" size="40"  aria-required="true" aria-invalid="false" /></span> </label></p>
+        <p><label> Email (required)<br />
+            <input type="email" name="your-email" value="" size="40"  aria-required="true" aria-invalid="false" /></span> </label></p>
+        <p><label> Message<br />
+            <textarea name="your-message" cols="40" rows="10"  aria-invalid="false"></textarea></span> </label></p>
+        <p><input type="submit" value="Send"  /></p>
       </div>
       </div>
     
@@ -98,7 +107,7 @@ input[type=text] {
 
   <!-- Footer -->
     <div id="footer">
-      <h2 style= "font-size: small;"><b>footer</b></h2>
+      <h2 style= "font-size: small;"><b>Copyright © 2021</b></h2>
     </div>
 
 
