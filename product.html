@@ -36,16 +36,14 @@
             color: #14A098;
         }
 
-        .btn, .btn:hover {
+        .btn {
             color: #cccccc;
             background-color: #14A098;
             border-color: #0F292F;
         }
 
-        .collapseButton {
-            color: #cccccc;
-            background-color: #14A098;
-            border-color: #0F292F;
+        .btn:hover {
+            background-color: #12817c;
         }
 
         a:hover {
@@ -82,15 +80,30 @@
         }
 
         .collapseButton {
+            color: #cccccc;
+            background-color: #14A098;
+            border-color: #0F292F;
             border-top: none; 
             border-left: none;
-            border-right: none;
+            border-right-style: 1px solid transparent;
             border-bottom-width: 2px;
+        }
+
+        .collapseButton:hover {
+            background-color: #12817c;
+            color:#cccccc;
+        }
+
+        .collapseButtonLast {
+            border-left-style: 1px solid transparent;
+            border-right: none;
         }
 
         /* Collapse buttons (Details, Reviews) styles when toggled on/off */
         #collapseToggler[aria-expanded="true"] {
-            border-bottom-color: #14A098;
+            border-bottom-color: #CB2D6F;
+            background-color: #12817c;
+            color: #cccccc;
         }
         #collapseToggler[aria-expanded="false"] {
             border-bottom-color: none;
@@ -181,7 +194,7 @@
                 <div id="collapseMain">
                     <ul class="list-group list-group-horizontal">
                         <li class="collapseButton list-group-item list-group-item-action text-center" data-bs-toggle="collapse" data-bs-target="#collapseDetails" aria-expanded="false" aria-controls="#collapseDetails" id="collapseToggler">Details</li>
-                        <li class="collapseButton list-group-item list-group-item-action text-center" data-bs-toggle="collapse" data-bs-target="#collapseReviews" aria-expanded="false" aria-controls="#collapseReviews" id="collapseToggler">Reviews</li>
+                        <li class="collapseButton collapseButtonLast list-group-item list-group-item-action text-center" data-bs-toggle="collapse" data-bs-target="#collapseReviews" aria-expanded="false" aria-controls="#collapseReviews" id="collapseToggler">Reviews</li>
                     </ul>
                     <div class="collapseContent">
                         <div class="collapse" data-bs-parent="#collapseMain" id="collapseDetails">
