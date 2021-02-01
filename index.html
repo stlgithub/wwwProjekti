@@ -5,67 +5,127 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-</head>
+
+    <style>
+
+      body {
+        background-color: #09191d;
+      }
+
+      .col-sm-8 {
+        background-color: #0F292F; margin-top: 3%;
+      }
+
+      h1, h3, h4, h5 {
+        color:#CB2D6F;
+      }
+
+      p {
+        color: white;
+      }
+
+      a {
+        color: #14A098;
+      }
+      
+      nav a {
+            color: #CB2D6F;
+        }
+
+        nav {
+            background-color: #0F292F;
+        }
+
+        nav a.active {
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #cccccc;
+        }
+
+        .navbar-toggler .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(203, 45, 111, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+        }
+
+        .navbar-toggler {
+            border-color: #CB2D6F;
+        }
+
+        #collapseMain, .collapseContent {
+            margin-top: 10px;
+        }
+
+        .collapseButton {
+            border-top: none; 
+            border-left: none;
+            border-right: none;
+            border-bottom-width: 2px;
+        }
+
+        /* Collapse buttons (Details, Reviews) styles when toggled on/off */
+        #collapseToggler[aria-expanded="true"] {
+            border-bottom-color: blueviolet;
+        }
+        #collapseToggler[aria-expanded="false"] {
+            border-bottom-color: none;
+        }
+
+    </style>
+
+
+  </head>
 <body>
-    
-    <div>
-        <header>
-            <div class="container">
-                <div class="row">
-                  <div class="col-xl-1 col">
-                   <a href="index.html"> <img src="img/logo.jpg" alt="Photo info" height="80px" width="80px"/> </a>
-                  </div>
-                  <div class="col-xl-10 col">
-                    <h1 style="padding: 20px 0;">Group 4</h1>
-                  </div>
-                  <div class="col">
-                    <a href="index.html"> <img src="img/cart.jpg" alt="Photo info" height="60px" width="60px"/> </a>
-                  </div>
-                </div>
-            </div>
-         </header>
-    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-sm">
+      <div class="container-fluid">
+      
+          <a class="navbar-brand" href="index.html"><img src="img/logo.jpg" width="80" height="80"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarContent">
+              <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                      <a class="nav-link" href="index.html">Home</a>
+                  </li>
+                  <li>
+                      <a class="nav-link active" href="product.html">Product 1</a>
+                  </li>
+                  <li>
+                      <a class="nav-link" href="#">Product 2</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="aboutus.html">About us</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </nav> <br>
 
     <div>
-     <ul class="nav justify-content-center">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-           <a class="nav-link" href="product.html">Product 1</a>
-          </li>
-         <li class="nav-item">
-            <a class="nav-link" href="#">Product 2</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="aboutus.html">About Us</a>
-          </li>
-        </ul>
-    </div> <br>
-
-    <div>
-        <div class="row" style="background-color: black; background-image: url('img/bg1.jpg'); min-height: 75vh; background-repeat: no-repeat;">
-                <div class="col-lg offset-lg-7" style="color: white;"> 
-                  <h4 style="text-align: center;"><br> Product 1 <br><br> 
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br><br> 
-                    <a href="product.html">Click here to learn more.</a></h4> </div>
+        <div class="row" style="background-color: #09191d; background-image: url('img/bg1.jpg'); min-height: 75vh; background-repeat: no-repeat;">
+                <div class="col-lg offset-lg-7"> 
+                  <h3 style="text-align: center;"><br> Product 1 </h3><br><br>
+                   <h4 style="text-align: center; color: white;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <a href="product.html">Click here to learn more.</a></h4> </div>
               </div>
         </div>
 
         <div>
-          <div class="row" style="background-color:#F8F8F8; background-image: url('img/bg2.jpg'); min-height: 75vh; background-size: 50%; background-repeat: no-repeat; background-position:right">
-                  <div class="col-lg-5" style="color:black;"> 
-                    <h4 style="text-align: center;"><br> Product 2 <br><br>
-                      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br><br> 
-                      <a href="">Click here to learn more.</a> </h4> </div>
+          <div class="row" style="background-color:#0F292F; background-image: url('img/bg2.jpg'); min-height: 75vh; background-size: 50%; background-repeat: no-repeat; background-position:right">
+                  <div class="col-lg-5" style="color:white;"> 
+                    <h3 style="text-align: center;"><br> Product 2 </h3> <br><br>
+                    <h4 style="text-align: center; color: white;"> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <a href="">Click here to learn more.</a></h4> </div>
                 </div>
           </div>
 
             <div> <br>
                 <div class="row">
-                    <div class="col" style="color:black;"> 
-                        <h5 style="text-align: center;"><br> About Us <br><br>
-                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <a href="aboutus.html">Click here to learn more.</a> </h5> </div>
+                    <div class="col"> 
+                        <h4 style="text-align: center;"><br> About Us <br><br></h4>
+                           <h5  style="color:white; text-align: center;"> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <a href="aboutus.html">Click here to learn more.</a> </h5> </div>
                           <div class="row"> <img src="img/bg4.jpg" alt="Photo info" /> </div>
                       </div>
                 </div>
