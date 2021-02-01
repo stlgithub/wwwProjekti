@@ -46,32 +46,67 @@
     label {
     font-weight: bold;
     }
+
+    .navbar-toggler .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg%27%3E%3Cpath stroke='rgba(203, 45, 111, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+        }
+
+    .btn {
+            color: #cccccc;
+            background-color: #14A098;
+            border-color: #0F292F;
+        }
+
+        .navbar-toggler {
+            border-color: #CB2D6F;
+        }
+        
+        nav a {
+            color: #CB2D6F;
+        }
+
+        nav {
+            background-color: #0F292F;
+        }
+
+        nav a.active {
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #cccccc;
+        }
+
   </style>
 </head>
 <body>
       <!-- Navigation -->
-      <div class="container">
-        <nav class="navbar navbar-light navbar-expand-sm bg-light">
-            <a class="navbar-brand" href="index.html"><img src="img/logo.jpg" width="80" height="80" alt="logo"></a>
+      <nav class="navbar navbar-expand-sm">
+        <div class="container-fluid">
+        
+            <a class="navbar-brand" href="index.html"><img src="img/logo.jpg" width="80" height="80"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
+  
             <div class="collapse navbar-collapse" id="navbarContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About us</a>
+                    <li>
+                        <a class="nav-link active" href="product.html">Product 1</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="#">Product 2</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="aboutus.html">About us</a>
                     </li>
                 </ul>
             </div>
-        </nav>
-    </div>
+        </div>
+    </nav>
   
   <!-- Content -->
     <div class="container">
@@ -116,9 +151,9 @@
   </div>
 
   <!-- Footer -->
-  <div > <br>
-    <footer style="background-color: darkgray; text-align: center;">
-        <p>Copyright © 2021 Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <div> <br>
+    <footer style="text-align:right;">
+        <h6 style="color:#CB2D6F">Copyright © 2021 Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h6>
     </footer>
 </div>
 
