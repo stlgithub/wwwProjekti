@@ -16,7 +16,7 @@
             color: white;
         }
 
-        col {
+        .contentArea {
             background-color: #0F292F;
         }
 
@@ -58,6 +58,7 @@
 
         nav {
             background-color: #0F292F;
+            margin-bottom: 15px;
         }
 
         nav a.active {
@@ -127,11 +128,11 @@
     </nav>
 
     <!-- Content -->
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
 
             <!-- Product images -->
-            <div class="col col-md-6">
+            <div class="col-md-6 contentArea">
                 <div class="carousel slide" data-bs-ride="carousel" id="productSlides">
                     <ol class="carousel-indicators">
                         <li data-bs-target="#productSlides" data-bs-slide-to="0" class="active"></li>
@@ -153,7 +154,7 @@
             </div>
 
             <!-- Product details -->
-            <div class="col col-md-6">
+            <div class="col-md-6 contentArea">
                 <div class="d-flex flex-row flex-wrap">
                     <h1 class="flex-grow-1">Product name</h1>
                     <div class="totalStarRatings flex-shrink-1">
