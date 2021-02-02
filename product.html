@@ -81,12 +81,21 @@
             border-right: none;
         }
 
+        table > thead > tr > th {
+            color: #14A098;
+        }
+
+        table, table > thead > tr > th, table > tbody > tr > td {
+            border-bottom-color: #CB2D6F !important;
+        }
+
         /* Collapse buttons (Details, Reviews) styles when toggled on/off */
         #collapseToggler[aria-expanded="true"] {
             border-bottom-color: #CB2D6F;
             background-color: #12817c;
             color: #cccccc;
         }
+
         #collapseToggler[aria-expanded="false"] {
             border-bottom-color: none;
         }
@@ -197,9 +206,31 @@
                         <!-- Technical -->
                         <div class="collapse" data-bs-parent="#collapseMain" id="collapseTechnical">
                             <h3>Product technical information</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat.
-                            </p>
+                            <table class="table table-dark">
+                                <thead>
+                                    <tr>
+                                        <th colspan="2">Electronics</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Manufacturer</td>
+                                        <td>Unknown<sup>TM</sup></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Processor</td>
+                                        <td>Very_good.21</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cores</td>
+                                        <td>2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Speed (GHz)</td>
+                                        <td>1,10</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
 
                         <!-- Reviews -->

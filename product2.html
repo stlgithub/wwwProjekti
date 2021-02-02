@@ -81,12 +81,21 @@
             border-right: none;
         }
 
+        table > thead > tr > th {
+            color: #14A098;
+        }
+
+        table, table > thead > tr > th, table > tbody > tr > td {
+            border-bottom-color: #CB2D6F !important;
+        }
+
         /* Collapse buttons (Details, Reviews) styles when toggled on/off */
         #collapseToggler[aria-expanded="true"] {
             border-bottom-color: #CB2D6F;
             background-color: #12817c;
             color: #cccccc;
         }
+
         #collapseToggler[aria-expanded="false"] {
             border-bottom-color: none;
         }
@@ -161,8 +170,8 @@
                     <div class="totalStarRatings flex-shrink-1">
                         <i class="bi bi-star-fill"></i>
                         <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star"></i>
-                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-half"></i>
                         <i class="bi bi-star"></i>
                         
                         <small>
@@ -197,9 +206,31 @@
                         <!-- Technical -->
                         <div class="collapse" data-bs-parent="#collapseMain" id="collapseTechnical">
                             <h3>Product technical information</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat.
-                            </p>
+                            <table class="table table-dark">
+                                <thead>
+                                    <tr>
+                                        <th colspan="2">Electronics</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Manufacturer</td>
+                                        <td>Known<sup>TM</sup></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Processor</td>
+                                        <td>Super_good.69</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cores</td>
+                                        <td>8</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Speed (GHz)</td>
+                                        <td>2,8</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
 
                         <!-- Reviews -->
@@ -211,21 +242,21 @@
                                 <div class="d-flex flex-row mb-1">
                                     <img src="img/user_placeholder_color.png" width="25" height="25"/>
                                     <small class="ms-2 align-self-center flex-grow-1">Product reviewer</small>
-                                    <small class="align-self-center ms-auto">21.1.2021</small>
+                                    <small class="align-self-center ms-auto">23.1.2021</small>
                                 </div>
                                 <div class="d-flex flex-row">
-                                    <h5 class="flex-grow-1">Adequate</h5>
+                                    <h5 class="flex-grow-1">Now this is something</h5>
                                     <div class="reviewStarRatings ms-auto">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
                                         <i class="bi bi-star-half"></i>
-                                        <i class="bi bi-star"></i>
-                                        <i class="bi bi-star"></i>
-                                        <i class="bi bi-star"></i>
-                                        <i class="bi bi-star"></i>
                                     </div>
                                 </div>
                                 
                                 <p>
-                                    This product is not my cup of tea (as one would say), but I'll give it half a star for effort.
+                                    I think the title says it all.
                                 </p>
                             </article>
 
@@ -234,21 +265,21 @@
                                 <div class="d-flex flex-row mb-1">
                                     <img src="img/user_placeholder_color.png" width="25" height="25"/>
                                     <small class="ms-2 align-self-center flex-grow-1">Generic user</small>
-                                    <small class="align-self-center ms-auto">2.2.2021</small>
+                                    <small class="align-self-center ms-auto">30.1.2021</small>
                                 </div>
                                 <div class="d-flex flex-row">
-                                    <h5 class="flex-grow-1">Nice product</h5>
+                                    <h5 class="flex-grow-1">It's a phone alright</h5>
                                     <div class="reviewStarRatings ms-auto">
                                         <i class="bi bi-star-fill"></i>
                                         <i class="bi bi-star-fill"></i>
                                         <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star"></i>
+                                        <i class="bi bi-star"></i>
                                     </div>
                                 </div>
                                 
                                 <p>
-                                    I got recommended this product by my friend and I have not been dissapointed. It's perfect in every way!
+                                    This was an impulse buy, but it surprised me in it's mediocrity.
                                 </p>
                             </article>
                         </div>
