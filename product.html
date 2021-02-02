@@ -208,40 +208,77 @@
                 
                 <button class="btn btn-outline-primary w-100">Add to cart</button>
 
-                <!-- Details and Reviews -->
+                <!-- Details, Technical and Reviews -->
                 <div id="collapseMain">
                     <ul class="list-group list-group-horizontal">
                         <li class="collapseButton list-group-item list-group-item-action text-center" data-bs-toggle="collapse" data-bs-target="#collapseDetails" aria-expanded="false" aria-controls="#collapseDetails" id="collapseToggler">Details</li>
+                        <li class="collapseButton list-group-item list-group-item-action text-center" data-bs-toggle="collapse" data-bs-target="#collapseTechnical" aria-expanded="false" aria-controls="#collapseTechnical" id="collapseToggler">Technical</li>
                         <li class="collapseButton collapseButtonLast list-group-item list-group-item-action text-center" data-bs-toggle="collapse" data-bs-target="#collapseReviews" aria-expanded="false" aria-controls="#collapseReviews" id="collapseToggler">Reviews</li>
                     </ul>
                     <div class="collapseContent">
+                        <!-- Details -->
                         <div class="collapse" data-bs-parent="#collapseMain" id="collapseDetails">
                             <h3>Product details</h3>
                             <p>Details about the product<br>
                                 Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat.
                             </p>
                         </div>
+
+                        <!-- Technical -->
+                        <div class="collapse" data-bs-parent="#collapseMain" id="collapseTechnical">
+                            <h3>Product technical information</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat.
+                            </p>
+                        </div>
+
+                        <!-- Reviews -->
                         <div class="collapse" data-bs-parent="#collapseMain" id="collapseReviews">
-                            <article>
-                                <h3>Product reviews</h3>
-                                <div class="d-flex flex-row">
+                            <h3>Product reviews</h3>
+
+                            <!-- Review 1 -->
+                            <article class="mb-4">
+                                <div class="d-flex flex-row mb-1">
                                     <img src="img/user_placeholder_color.png" width="25" height="25"/>
-                                    <small class="ms-2 align-self-center flex-grow-1">Username</small>
+                                    <small class="ms-2 align-self-center flex-grow-1">Product reviewer</small>
                                     <small class="align-self-center ms-auto">21.1.2021</small>
                                 </div>
                                 <div class="d-flex flex-row">
-                                    <h5 class="flex-grow-1">Review header</h5>
+                                    <h5 class="flex-grow-1">Adequate</h5>
                                     <div class="reviewStarRatings ms-auto">
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
                                         <i class="bi bi-star-half"></i>
+                                        <i class="bi bi-star"></i>
+                                        <i class="bi bi-star"></i>
+                                        <i class="bi bi-star"></i>
                                         <i class="bi bi-star"></i>
                                     </div>
                                 </div>
                                 
-                                <p>Review content<br>
-                                    Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat.
+                                <p>
+                                    This product is not my cup of tea (as one would say), but I'll give it half a star for effort.
+                                </p>
+                            </article>
+
+                            <!-- Review 2 -->
+                            <article class="mb-4">
+                                <div class="d-flex flex-row mb-1">
+                                    <img src="img/user_placeholder_color.png" width="25" height="25"/>
+                                    <small class="ms-2 align-self-center flex-grow-1">Generic user</small>
+                                    <small class="align-self-center ms-auto">2.2.2021</small>
+                                </div>
+                                <div class="d-flex flex-row">
+                                    <h5 class="flex-grow-1">Nice product</h5>
+                                    <div class="reviewStarRatings ms-auto">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                    </div>
+                                </div>
+                                
+                                <p>
+                                    I got recommended this product by my friend and I have not been dissapointed. It's perfect in every way!
                                 </p>
                             </article>
                         </div>
