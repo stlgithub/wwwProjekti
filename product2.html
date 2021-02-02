@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product 1</title>
+    <title>Product 2</title>
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
@@ -90,13 +90,13 @@
         }
 
         /* Collapse buttons (Details, Reviews) styles when toggled on/off */
-        .collapseButton[aria-expanded="true"] {
+        #collapseToggler[aria-expanded="true"] {
             border-bottom-color: #CB2D6F;
             background-color: #12817c;
             color: #cccccc;
         }
 
-        .collapseButton[aria-expanded="false"] {
+        #collapseToggler[aria-expanded="false"] {
             border-bottom-color: transparent;
         }
     </style>
@@ -118,10 +118,10 @@
                         <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <li>
-                        <a class="nav-link active" href="product.html">Product 1</a>
+                        <a class="nav-link" href="product.html">Product 1</a>
                     </li>
                     <li>
-                        <a class="nav-link" href="product2.html">Product 2</a>
+                        <a class="nav-link active" href="product2.html">Product 2</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="aboutus.html">About us</a>
@@ -151,13 +151,13 @@
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img class="d-block img-fluid" src="img/product_1/first_scaled.jpg" alt="Product image"/>
+                            <img class="d-block img-fluid" src="img/product_2/first_scaled.jpg" alt="Product image"/>
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block img-fluid" src="img/product_1/second.jpg" alt="Product image"/>
+                            <img class="d-block img-fluid" src="img/product_2/second_scaled.jpg" alt="Product image"/>
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block img-fluid" src="img/product_1/third_scaled.jpg" alt="Product image"/>
+                            <img class="d-block img-fluid" src="img/product_2/third.jpg" alt="Product image"/>
                         </div>
                     </div>
                 </div>
@@ -166,12 +166,12 @@
             <!-- Product details -->
             <div class="col-md-6 contentArea">
                 <div class="d-flex flex-row flex-wrap">
-                    <h1 class="flex-grow-1">Not so good laptop</h1>
+                    <h1 class="flex-grow-1">Good phone</h1>
                     <div class="totalStarRatings flex-shrink-1">
                         <i class="bi bi-star-fill"></i>
                         <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star"></i>
-                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-half"></i>
                         <i class="bi bi-star"></i>
                         
                         <small>
@@ -180,7 +180,7 @@
                     </div>
                 </div>
                
-                <h2>200€</h2>
+                <h2>500 €</h2>
                 <p>Brief description<br>
                     Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat.
                 </p>
@@ -215,19 +215,19 @@
                                 <tbody>
                                     <tr>
                                         <td>Manufacturer</td>
-                                        <td>Unknown<sup>TM</sup></td>
+                                        <td>Known<sup>TM</sup></td>
                                     </tr>
                                     <tr>
                                         <td>Processor</td>
-                                        <td>Very_good.21</td>
+                                        <td>Super_good.69</td>
                                     </tr>
                                     <tr>
                                         <td>Cores</td>
-                                        <td>2</td>
+                                        <td>8</td>
                                     </tr>
                                     <tr>
                                         <td>Speed (GHz)</td>
-                                        <td>1,10</td>
+                                        <td>2,8</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -242,21 +242,21 @@
                                 <div class="d-flex flex-row mb-1">
                                     <img src="img/user_placeholder_color.png" alt="User image" width="25" height="25"/>
                                     <small class="ms-2 align-self-center flex-grow-1">Product reviewer</small>
-                                    <small class="align-self-center ms-auto">21.1.2021</small>
+                                    <small class="align-self-center ms-auto">23.1.2021</small>
                                 </div>
                                 <div class="d-flex flex-row">
-                                    <h5 class="flex-grow-1">Adequate</h5>
+                                    <h5 class="flex-grow-1">Now this is something</h5>
                                     <div class="reviewStarRatings ms-auto">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
                                         <i class="bi bi-star-half"></i>
-                                        <i class="bi bi-star"></i>
-                                        <i class="bi bi-star"></i>
-                                        <i class="bi bi-star"></i>
-                                        <i class="bi bi-star"></i>
                                     </div>
                                 </div>
                                 
                                 <p>
-                                    This product is not my cup of tea (as one would say), but I'll give it half a star for effort.
+                                    I think the title says it all.
                                 </p>
                             </article>
 
@@ -265,21 +265,21 @@
                                 <div class="d-flex flex-row mb-1">
                                     <img src="img/user_placeholder_color.png" alt="User image" width="25" height="25"/>
                                     <small class="ms-2 align-self-center flex-grow-1">Generic user</small>
-                                    <small class="align-self-center ms-auto">2.2.2021</small>
+                                    <small class="align-self-center ms-auto">30.1.2021</small>
                                 </div>
                                 <div class="d-flex flex-row">
-                                    <h5 class="flex-grow-1">Nice product</h5>
+                                    <h5 class="flex-grow-1">It's a phone alright</h5>
                                     <div class="reviewStarRatings ms-auto">
                                         <i class="bi bi-star-fill"></i>
                                         <i class="bi bi-star-fill"></i>
                                         <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star"></i>
+                                        <i class="bi bi-star"></i>
                                     </div>
                                 </div>
                                 
                                 <p>
-                                    I got recommended this product by my friend and I have not been dissapointed. It's perfect in every way!
+                                    This was an impulse buy, but it surprised me in it's mediocrity.
                                 </p>
                             </article>
                         </div>
