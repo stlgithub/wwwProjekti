@@ -152,8 +152,8 @@ else if (isset($_POST["login"])){
       <div class="col-sm-4" style="padding: 100px;">
         <h2 style="text-align: center;"><b>Login</b></h2><br><br>
         <form id = "lForm" method = "POST" style="text-align: center;">
-        <label>Username: </label><br><input name = "Lusername" type = "text" placeholder = "Username" required><br><br>
-        <label>Password: </label><br><input name = "Lpassword" type = "password" placeholder = "Password" pattern = ".{5,}" required><br><br>
+        <label>Username: </label><br><input class="form-control" name = "Lusername" type = "text" placeholder = "Username" required><br><br>
+        <label>Password: </label><br><input class="form-control" name = "Lpassword" type = "password" placeholder = "Password" pattern = ".{5,}" required><br><br>
         <button type = "submit" class = "btn btn-primary" name = "login">Login</button>
         </form>
       </div>
@@ -165,9 +165,9 @@ else if (isset($_POST["login"])){
       <div class="col-sm-4" style=" padding: 100px;">
         <h2 style="text-align: center; "><b>Register</b></h2><br><br>
         <form id = "sForm" method = "POST" style="text-align: center;">
-        <label>Username: </label><br><input name = "Susername" type = "text" placeholder = "Username" required><br><br>
-        <label>Email: </label><br><input name = "Semail" type = "email" placeholder = "Email Address" required><br><br>
-        <label>Password: </label><br><input name = "Spassword" type = "password" placeholder = "Password" pattern = ".{5,}" required><br><br>
+        <label>Username: </label><br><input class="form-control" name = "Susername" type = "text" placeholder = "Username" required><br><br>
+        <label>Email: </label><br><input class="form-control" name = "Semail" type = "email" placeholder = "Email Address" required><br><br>
+        <label>Password: </label><br><input class="form-control" name = "Spassword" type = "password" placeholder = "Password" pattern = ".{5,}" required><br><br>
         <button type = "submit" class = "btn btn-primary" name = "signup">Sign Up</button>
       </form>
       </div> 
