@@ -27,9 +27,6 @@ if(!empty($product -> productId) && !empty($product -> productName) && !empty($p
 
         // katsotaan ettei lisättävä tuote ole jo ostoskorissa
         if(!in_array($product -> productId, $product_id_array)) {
-            // laske shopping_carting alkiot
-            $last = count($_SESSION["shopping_cart"]);
-            
             // lisää tuote shopping_carttiin
             array_push($_SESSION["shopping_cart"], $product_array);
             echo "Product added to cart!";
