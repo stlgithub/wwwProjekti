@@ -113,6 +113,17 @@
     </style>
 </head>
 <body>
+    <?php
+    session_start();
+
+    // debuggia
+    if(isset($_SESSION["shopping_cart"])) {
+        print_r($_SESSION["shopping_cart"]);
+    } else {
+        echo "tyhjää täynnä";
+    }
+    
+    ?>
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-sm">
@@ -177,7 +188,7 @@
             <!-- Product details -->
             <div class="col-md-6 contentArea">
                 <div class="d-flex flex-row flex-wrap">
-                    <h1 class="flex-grow-1">Not so good laptop</h1>
+                    <h1 class="flex-grow-1" id="productName">Not so good laptop</h1>
                     <div class="totalStarRatings flex-shrink-1">
                         <i class="bi bi-star-fill"></i>
                         <i class="bi bi-star-fill"></i>
@@ -191,13 +202,15 @@
                     </div>
                 </div>
                
-                <h2>200€</h2>
+                <h2 id="productPrice">200€</h2>
                 <p>
                     With this laptop you can surf the web at below average speeds and play minesweeper all you want.<br>
                     Although not cutting edge technology it's still better than nothing (this statement is arguable).
                 </p>
                 
-                <a class="btn btn-outline-primary w-100" href="shoppingcart.html" role="button">Add to cart</a>
+                <a class="btn btn-outline-primary w-100" role="button" onclick="addToCart()">Add to cart</a>
+                <p id="message"></p>
+                
 
                 <!-- Details, Technical and Reviews -->
                 <div id="collapseMain">
@@ -252,50 +265,9 @@
                             <h3>Product reviews</h3>
 
                             <!-- Review 1 -->
-                            <article class="mb-4">
-                                <div class="d-flex flex-row mb-1">
-                                    <img src="img/user_placeholder_color.png" alt="Default user avatar" width="25" height="25"/>
-                                    <small class="ms-2 align-self-center flex-grow-1">Product reviewer</small>
-                                    <small class="align-self-center ms-auto">21.1.2021</small>
-                                </div>
-                                <div class="d-flex flex-row">
-                                    <h5 class="flex-grow-1">Adequate</h5>
-                                    <div class="reviewStarRatings ms-auto">
-                                        <i class="bi bi-star-half"></i>
-                                        <i class="bi bi-star"></i>
-                                        <i class="bi bi-star"></i>
-                                        <i class="bi bi-star"></i>
-                                        <i class="bi bi-star"></i>
-                                    </div>
-                                </div>
-                                
-                                <p>
-                                    This product is not my cup of tea (as one would say), but I'll give it half a star for effort.
-                                </p>
-                            </article>
-
-                            <!-- Review 2 -->
-                            <article class="mb-4">
-                                <div class="d-flex flex-row mb-1">
-                                    <img src="img/user_placeholder_color.png" alt="Default user avatar" width="25" height="25"/>
-                                    <small class="ms-2 align-self-center flex-grow-1">Generic user</small>
-                                    <small class="align-self-center ms-auto">2.2.2021</small>
-                                </div>
-                                <div class="d-flex flex-row">
-                                    <h5 class="flex-grow-1">Nice product</h5>
-                                    <div class="reviewStarRatings ms-auto">
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                    </div>
-                                </div>
-                                
-                                <p>
-                                    I got recommended this product by my friend and I have not been dissapointed. It's perfect in every way!
-                                </p>
-                            </article>
+                            <?php
+                                include "fetch_product_reviews.php";
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -313,5 +285,28 @@
 
     <!-- Bootstrap JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        // tuotteen lähetys php-tiedostolle
+        function addToCart() {
+        var productInfo = {productId: 1, 
+            productName: $("#productName").text(),
+            productPrice: $("#productPrice").text()
+        };
+
+        var productJson = JSON.stringify(productInfo);
+
+        var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if(this.readyState == 4 && this.status == 200) {
+                    $("#message").text(this.responseText);
+                }
+            };
+            xhttp.open("POST", "add_to_cart.php", true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send("product=" + productJson);
+        }
+    </script>
 </body>
 </html>
