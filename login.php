@@ -2,7 +2,6 @@
 
 <?php
 session_start();
-require_once "config.php";
 
 if (isset($_POST['signup'])){
   unset($error);
@@ -10,23 +9,23 @@ if (isset($_POST['signup'])){
   $password = $mysqli -> real_escape_string(($_POST["Spassword"]));
   $email = $mysqli -> real_escape_string(stripslashes(strip_tags($_POST["Semail"])));
   
-  $sql = 'SELECT * FROM Accounts WHERE Name = "'.$username.'"';
+  $sql = 'SELECT * FROM group4_accounts WHERE Name = "'.$username.'"';
   $result = $mysqli->query($sql);
   if ($result->num_rows > 0){
   $error = "This username is already taken!<br>";
   }
   else{
-  $sql = 'SELECT * FROM Accounts WHERE Email = "'.$email.'"';
+  $sql = 'SELECT * FROM group4_accounts WHERE Email = "'.$email.'"';
   $result = $mysqli->query($sql);
   if ($result->num_rows > 0){
   $error = "This email is being used by another account!<br>";
   }
   else{
-    $sql= "SELECT UserID FROM Accounts ORDER BY UserID DESC LIMIT 1";
+    $sql= "SELECT UserID FROM group4_accounts ORDER BY UserID DESC LIMIT 1";
     $result = $mysqli->query($sql);
     $row = $result->fetch_assoc();
     $LastId = $row['UserID']+1;
-    $sql = "INSERT INTO Accounts (UserID, Name, Password, Email) VALUES ('$LastId','$username','$password','$email')";
+    $sql = "INSERT INTO group4_accounts (UserID, Name, Password, Email) VALUES ('$LastId','$username','$password','$email')";
    if ($mysqli->query($sql)){
      $_SESSION["loggedIn"] = TRUE;
      $_SESSION["username"] = $username;
@@ -42,13 +41,13 @@ if (isset($_POST['signup'])){
 else if (isset($_POST["login"])){
   $username = $mysqli -> real_escape_string(stripslashes(strip_tags($_POST["Lusername"])));
   $password = $mysqli -> real_escape_string($_POST["Lpassword"]);
-  $sql = "SELECT * FROM Accounts WHERE Name = '$username'";
+  $sql = "SELECT * FROM group4_accounts WHERE Name = '$username'";
   $result = $mysqli->query($sql);
   if ($result->num_rows == 0){
     $error2 = "There is no account associated with this username!<br>";
   }
   else{
-    $sql = "SELECT * FROM Accounts WHERE Name = '".$username."'AND Password = '".$password."'";
+    $sql = "SELECT * FROM group4_accounts WHERE Name = '".$username."'AND Password = '".$password."'";
     $result = $mysqli->query($sql);
     if($result->num_rows == 1){
       $row = $result->fetch_row();
@@ -132,7 +131,10 @@ else if (isset($_POST["login"])){
                         <a class="nav-link " href="product2.html">Smartphone</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="aboutus.html">About us</a>
+                        <a class="nav-link " href="aboutus.html">About us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="login.php">Login</a>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav ms-auto">
