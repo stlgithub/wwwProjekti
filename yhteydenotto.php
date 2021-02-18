@@ -44,7 +44,7 @@ else{
   //Tallennetaan tietokantaan käyttäen prepared statementtia - ei tarvitse 
   //välittää vihamielisistä syötteistä
   if ($name && $email && $message){
-    $sql="insert into yhteyden_otot(Name, Email, Message) values(?,?,?)";
+    $sql="insert into marianne_yhteydenotot(Name, Email, Message) values(?,?,?)";
     $stmt=mysqli_prepare($yhteys, $sql);
 	if(!$stmt) {
       echo "Virhe: ".mysqli_error($yhteys);
