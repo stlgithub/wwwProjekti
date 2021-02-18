@@ -25,24 +25,22 @@ else{
 }
 
   
-  $yhteys = mysqli_connect("shell.hamk.fi", "trtkp20a3", "trtkp20a3passwd");
+  $yhteys = mysqli_connect("localhost", "trtkp20a3", "trtkp20a3passwd");
   
   // Check connection
   if (!$yhteys) {
     die("Yhteyden muodostaminen epäonnistui: " . mysqli_connect_error());
   }
-  echo "Yhteys OK."; // debuggia
+  echo "Yhteys OK."; 
   
   $tietokanta=mysqli_select_db($yhteys, "trtkp20a3");
   if (!$tietokanta) {
     die("Tietokannan valinta epäonnistui: " . mysqli_connect_error());
   }
-  echo "Tietokanta OK."; // debuggia
+  echo "Tietokanta OK."; 
   
 
-  //Jos lomakkeelta saatiin oheiset tiedot
-  //Tallennetaan tietokantaan käyttäen prepared statementtia - ei tarvitse 
-  //välittää vihamielisistä syötteistä
+
   if ($name && $email && $message){
     $sql="insert into marianne_yhteydenotot(Name, Email, Message) values(?,?,?)";
     $stmt=mysqli_prepare($yhteys, $sql);
@@ -58,7 +56,7 @@ else{
  $stmt=mysqli_prepare($yhteys, $sql); 
 
   }
-  //Yhteys katkeaa automaattisesti, kun scripti loppuu, mutta tässä kuitenkin 	
+  
   mysqli_close($yhteys); 
   
  
