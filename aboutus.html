@@ -95,23 +95,23 @@
 
       <div class="col-sm-4" style=" padding: 100px;">
         <h2 style="text-align: center; "><b>Contact us</b></h2><br><br>
-        <form>
+        <form method='post' action='yhteydenotto.php'>
         <div class="form-group">
           <label for="exampleInputEmail1">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" >
+          <input type="email" class="form-control" id="exampleInputEmail1" name="email" >
         </div><br>
         <div class="form-group">
           <label for="exampleFormControlTextarea1">Name</label>
-          <input type="text" class="form-control" id="exampleFormControlTextarea1" >
+          <input type="text" class="form-control" id="exampleFormControlTextarea1" name="name" >
         </div><br>
         <div class="form-group">
           <label for="exampleFormControlTextarea1">Message</label>
-          <textarea class="form-control" rows="3"></textarea>
+          <textarea class="form-control" rows="3" name="message"></textarea>
         </div><br>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
       </div> 
-   
+  
 </div>
 
   </div>
