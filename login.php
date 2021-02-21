@@ -151,6 +151,9 @@ else if (isset($_POST["login"])){
                     <li class="nav-item">
                         <a class="nav-link active" href="login.php">Login</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="logout.php">Logout</a>
+                    </li>
                 </ul>
                 <ul class="nav navbar-nav ms-auto">
                   <li>
