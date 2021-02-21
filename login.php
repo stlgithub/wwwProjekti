@@ -14,12 +14,18 @@ if (isset($_POST['signup'])){
   $result = $mysqli->query($sql);
   if ($result->num_rows > 0){
   $error = "This username is already taken!<br>";
+  echo '<script type="text/javascript">';
+  echo ' alert("This username is already taken!")';
+  echo '</script>';
   }
   else{
   $sql = 'SELECT * FROM group4_accounts WHERE Email = "'.$email.'"';
   $result = $mysqli->query($sql);
   if ($result->num_rows > 0){
   $error = "This email is being used by another account!<br>";
+  echo '<script type="text/javascript">';
+  echo ' alert("This email is being used by another account!")';
+  echo '</script>';
   }
   else{
     $sql= "SELECT UserID FROM group4_accounts ORDER BY UserID DESC LIMIT 1";
@@ -34,7 +40,9 @@ if (isset($_POST['signup'])){
      $_SESSION["email"] = $email;
    }
    else{
-     echo("Error creating account. Please try again later.");
+     echo '<script type="text/javascript">';
+     echo ' alert("Error creating account. Please try again later.")';
+     echo '</script>';
    }
   }
 }
@@ -46,6 +54,9 @@ else if (isset($_POST["login"])){
   $result = $mysqli->query($sql);
   if ($result->num_rows == 0){
     $error2 = "There is no account associated with this username!<br>";
+    echo '<script type="text/javascript">';
+    echo ' alert("There is no account associated with this username!")';
+    echo '</script>';
   }
   else{
     $sql = "SELECT * FROM group4_accounts WHERE Name = '".$username."'AND Password = '".$password."'";
@@ -59,6 +70,9 @@ else if (isset($_POST["login"])){
     }
     else{
       $error2 = "Invalid username or password!<br>";
+      echo '<script type="text/javascript">';
+      echo ' alert("Invalid username or password!")';
+      echo '</script>'; 
     }
   }
 }

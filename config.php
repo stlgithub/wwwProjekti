@@ -1,5 +1,5 @@
 <?php
-$servername = "shell.hamk.fi";
+$servername = "localhost";
 $username = "trtkp20a3";
 $password = "trtkp20a3passwd";
 $database = "trtkp20a3";
