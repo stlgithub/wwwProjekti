@@ -30,6 +30,7 @@ if(!empty($product -> productId) && !empty($product -> productName) && !empty($p
             // lisää tuote shopping_carttiin
             array_push($_SESSION["shopping_cart"], $product_array);
             echo "Product added to cart!";
+            header("Location: shoppingcart.php");
         } else {
             // tuote on jo shopping_cartissa
             echo "Product already in cart.";
@@ -39,6 +40,7 @@ if(!empty($product -> productId) && !empty($product -> productName) && !empty($p
         // lisää tuote shopping_cartin ensimmäiseen alkioon
         $_SESSION["shopping_cart"][0] = $product_array;
         echo "Product added to cart!";
+        header("Location: shoppingcart.php");
     }
 } else {
     echo "Incomplete product data.";
