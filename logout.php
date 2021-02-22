@@ -2,6 +2,7 @@
 session_start();
 session_unset();
 session_destroy();
-header("location:login.php");
-exit();
+echo '<script type="text/javascript">';
+echo ' alert("You have been logged out.")';
+echo '</script>';
 ?>

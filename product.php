@@ -136,7 +136,7 @@
                         <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <li>
-                        <a class="nav-link active" href="product.html">Laptop</a>
+                        <a class="nav-link active" href="product.php">Laptop</a>
                     </li>
                     <li>
                         <a class="nav-link" href="product2.html">Smartphone</a>
@@ -144,10 +144,16 @@
                     <li class="nav-item">
                         <a class="nav-link" href="aboutus.html">About us</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="logout.php">Logout</a>
+                    </li>
                 </ul>
                 <ul class="nav navbar-nav ms-auto">
                     <li>
-                        <a class="nav-link" href="shoppingcart.html"><img src="img/cart_nav_color.png" alt="Shopping cart" width="50" height="50"/></a>
+                        <a class="nav-link" href="shoppingcart.php"><img src="img/cart_nav_color.png" alt="Shopping cart" width="50" height="50"/></a>
                     </li>
                 </ul>
             </div>
