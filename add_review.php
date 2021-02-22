@@ -9,13 +9,16 @@ if(isset($_POST["review"])) {
 
 // kaikki tiedot saatu
 if(!empty($review -> productId) && !empty($review -> userId) && !empty($review -> rating) && !empty($review -> heading) && !empty($review -> content) && !empty($review -> date)) {
+    session_start();
+    $userId = $_SESSION['userID'];
+    
     include("database.php");
 
     $user = 1;
 
     $sql = "INSERT INTO projekti_reviews(user_id, product_id, heading, content, rating, date) VALUES(?, ?, ?, ?, ?, ?)";
     $stmt = $mysqli -> prepare($sql);
-    $stmt -> bind_param('iissis', $review->userId, $review->productId, $review->heading, $review->content, $review->rating, $review->date);
+    $stmt -> bind_param('iissis', $userId, $review->productId, $review->heading, $review->content, $review->rating, $review->date);
     $result = $stmt -> execute();
 
     if(!$result) {
