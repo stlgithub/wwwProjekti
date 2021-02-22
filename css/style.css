@@ -41,3 +41,28 @@ nav a:hover {
 .navbar-toggler {
     border-color: #CB2D6F;
 }
+
+.rating {
+  display: inline-block;
+}
+
+.rating input {
+    display: none;
+}
+
+.rating label {
+  font-size: 20px;
+  padding: 2px;
+  color: #1c4953;
+  float: right;
+  transition: all 0.2s ease;
+}
+
+.rating input:not(:checked) ~ label:hover,
+.rating input:not(:checked) ~ label:hover ~ label {
+  color: #fff;
+}
+
+.rating input:checked ~ label {
+  color: #fff;
+}

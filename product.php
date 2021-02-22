@@ -116,9 +116,9 @@
     <?php
         session_start();
 
-        // Tällä voi testata formia
+        /* Tällä voi testata formia
         $_SESSION['loggedIn'] = true;
-        $_SESSION['userID'] = 1;
+        $_SESSION['userID'] = 1; */
     ?>
 
     <!-- Navigation -->
