@@ -24,40 +24,24 @@ else{
     $message="";
 }
 
-  
-  $yhteys = mysqli_connect("localhost", "trtkp20a3", "trtkp20a3passwd");
-  
-  // Check connection
-  if (!$yhteys) {
-    die("Yhteyden muodostaminen epäonnistui: " . mysqli_connect_error());
-  }
-  echo "Yhteys OK."; 
-  
-  $tietokanta=mysqli_select_db($yhteys, "trtkp20a3");
-  if (!$tietokanta) {
-    die("Tietokannan valinta epäonnistui: " . mysqli_connect_error());
-  }
-  echo "Tietokanta OK."; 
-  
-
 
   if ($name && $email && $message){
     $sql="insert into marianne_yhteydenotot(Name, Email, Message) values(?,?,?)";
-    $stmt=mysqli_prepare($yhteys, $sql);
+    $stmt=mysqli_prepare($mysqli, $sql);
 	if(!$stmt) {
-      echo "Virhe: ".mysqli_error($yhteys);
+      echo "Virhe: ".mysqli_error($mysqli);
     }
     mysqli_stmt_bind_param($stmt, 'sss', $name, $email, $message);
     mysqli_stmt_execute($stmt);
-    $last_id = mysqli_insert_id($yhteys);
+    $last_id = mysqli_insert_id($mysqli);
     mysqli_stmt_close($stmt);
   
  
- $stmt=mysqli_prepare($yhteys, $sql); 
+ $stmt=mysqli_prepare($mysqli, $sql); 
 
   }
   
-  mysqli_close($yhteys); 
+  mysqli_close($mysqli); 
   
  
   exit;
