@@ -33,7 +33,7 @@ else{
    
 
 
-  
+  if ($name && $email && $message){
     $sql="insert into marianne_yhteydenotot(Name, Email, Message) values(?,?,?)";
     $stmt=mysqli_prepare($mysqli, $sql);
     mysqli_stmt_bind_param($stmt, 'sss', $name, $email, $message);
@@ -43,7 +43,14 @@ else{
 	echo '<script type="text/javascript">';
 	echo 'alert("Message sent successfully!")';
 	echo '</script>';
-  
- 
+	exit;  
+}
+else{
+	echo '<script type="text/javascript">';
+	echo 'alert("Fill in all fields")';
+	echo '</script>';
+
   exit;
+}
+
   ?>
