@@ -114,15 +114,12 @@
 </head>
 <body>
     <?php
-    session_start();
+        session_start();
 
-    // debuggia
-    if(isset($_SESSION["shopping_cart"])) {
-        print_r($_SESSION["shopping_cart"]);
-    } else {
-        echo "tyhjää täynnä";
-    }
-    
+        /* Tällä voi testata formia
+        $_SESSION['loggedIn'] = true;
+        $_SESSION['userID'] = 2;
+        */
     ?>
 
     <!-- Navigation -->
@@ -260,11 +257,22 @@
                             </table>
                         </div>
 
-                        <!-- Reviews -->
+                        <!-- Reviews tab -->
                         <div class="collapse" data-bs-parent="#collapseMain" id="collapseReviews">
-                            <h3>Product reviews</h3>
+                            <div class="d-flex flex-row mb-2">
+                                <h3>Product reviews</h3>
+                                <button class="btn ms-auto">Write a review <i class="bi bi-star-fill"></i></button>
+                            </div>
 
-                            <!-- Review 1 -->
+                            <?php
+                                if(isset($_SESSION['loggedIn']) && isset($_SESSION['userID']) && $_SESSION['loggedIn'] != false) {
+                                    include("review_form.html");
+                                } else {
+                                    echo "Please login first!";
+                                }
+                            ?>
+                            
+                            <!-- Reviews -->
                             <?php
                                 include "fetch_product_reviews.php";
                             ?>
@@ -290,22 +298,57 @@
     <script>
         // tuotteen lähetys php-tiedostolle
         function addToCart() {
-        var productInfo = {productId: 1, 
-            productName: $("#productName").text(),
-            productPrice: $("#productPrice").text()
-        };
-
-        var productJson = JSON.stringify(productInfo);
-
-        var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
-                if(this.readyState == 4 && this.status == 200) {
-                    $("#message").text(this.responseText);
-                }
+            var productInfo = {
+                productId: 1, 
+                productName: $("#productName").text(),
+                productPrice: $("#productPrice").text()
             };
-            xhttp.open("POST", "add_to_cart.php", true);
-            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhttp.send("product=" + productJson);
+
+            var productJson = JSON.stringify(productInfo);
+
+            var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if(this.readyState == 4 && this.status == 200) {
+                        $("#message").text(this.responseText);
+                    }
+                };
+                xhttp.open("POST", "add_to_cart.php", true);
+                xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                xhttp.send("product=" + productJson);
+        }
+
+        // review
+        function sendReview() {
+            var today = new Date();
+            var dd = String(today.getDate()).padStart(2, '0');
+            var mm = String(today.getMonth() + 1).padStart(2, '0');
+            var yyyy = today.getFullYear();
+
+            today = yyyy + '-' + mm + '-' + dd;
+            
+            var reviewInfo = {
+                productId: 1,
+                userId: <?php echo $_SESSION['userID'] ?>,
+                rating: $("input[name=rate]:checked").val(), 
+                heading: $("#reviewHeading").val(),
+                content: $("#reviewContent").val(),
+                date: today
+            };
+
+
+
+            var reviewJson = JSON.stringify(reviewInfo);
+
+            var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if(this.readyState == 4 && this.status == 200) {
+                        $("#reviewMessage").text(this.responseText);
+                    }
+                };
+                xhttp.open("POST", "add_review.php", true);
+                xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                xhttp.send("review=" + reviewJson);
+
         }
     </script>
 </body>
