@@ -44,4 +44,5 @@ if(!empty($product -> productId) && !empty($product -> productName) && !empty($p
     echo "Incomplete product data.";
     exit;
 }
+
 ?>

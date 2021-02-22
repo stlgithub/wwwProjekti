@@ -151,7 +151,7 @@
                 </ul>
                 <ul class="nav navbar-nav ms-auto">
                     <li>
-                        <a class="nav-link" href="shoppingcart.html"><img src="img/cart_nav_color.png" alt="Shopping cart" width="50" height="50"/></a>
+                        <a class="nav-link" href="shoppingcart.php"><img src="img/cart_nav_color.png" alt="Shopping cart" width="50" height="50"/></a>
                     </li>
                 </ul>
             </div>
