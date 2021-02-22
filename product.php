@@ -116,10 +116,9 @@
     <?php
         session_start();
 
-        /* Tällä voi testata formia
+        // Tällä voi testata formia
         $_SESSION['loggedIn'] = true;
-        $_SESSION['userID'] = 2;
-        */
+        $_SESSION['userID'] = 1;
     ?>
 
     <!-- Navigation -->
@@ -328,7 +327,6 @@
             
             var reviewInfo = {
                 productId: 1,
-                userId: <?php echo $_SESSION['userID'] ?>,
                 rating: $("input[name=rate]:checked").val(), 
                 heading: $("#reviewHeading").val(),
                 content: $("#reviewContent").val(),
