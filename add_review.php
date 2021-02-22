@@ -8,11 +8,11 @@ if(isset($_POST["review"])) {
 }
 
 // kaikki tiedot saatu
-if(!empty($review -> productId) && !empty($review -> userId) && !empty($review -> rating) && !empty($review -> heading) && !empty($review -> content) && !empty($review -> date)) {
+if(!empty($review -> productId) && !empty($review -> rating) && !empty($review -> heading) && !empty($review -> content) && !empty($review -> date)) {
     session_start();
     $userId = $_SESSION['userID'];
     
-    include("database.php");
+    include("config.php");
 
     $user = 1;
 
