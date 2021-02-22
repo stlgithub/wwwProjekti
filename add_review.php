@@ -16,7 +16,7 @@ if(!empty($review -> productId) && !empty($review -> userId) && !empty($review -
 
     $user = 1;
 
-    $sql = "INSERT INTO projekti_reviews(user_id, product_id, heading, content, rating, date) VALUES(?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO group4_reviews(user_id, product_id, heading, content, rating, date) VALUES(?, ?, ?, ?, ?, ?)";
     $stmt = $mysqli -> prepare($sql);
     $stmt -> bind_param('iissis', $userId, $review->productId, $review->heading, $review->content, $review->rating, $review->date);
     $result = $stmt -> execute();
