@@ -216,7 +216,7 @@ if (isset($_POST['action']) && $_POST['action']=="change"){
                           </div>
                           <p style="text-align: center;">TOTAL PRICE: </p>
                           <div style="color:white; text-align:center;">  <?php echo $total_price."€"; ?> </div> <br>
-                          <p hidden style="text-align: center;">Items: </p><div hidden><input type='text' name='product_name' value=<?php echo $product["product_name"]; ?> style="text-align: center;"></div>
+                          <p hidden style="text-align: center;">Items: </p><div hidden><input type='text' name='product_name' value=<?php echo $product["product_id"]; ?> style="text-align: center;"></div>
                           <p hidden style="text-align: center;">Quantity: </p><div hidden style="text-align:center;"><input type='text' name='quantity' value=<?php echo $product["quantity"]; ?> style="text-align: center;"></div>
                           <p hidden style="text-align: center;">Total Price: </p><div hidden style="text-align:center;"><input type='text' name='total_price' value=<?php echo $total_price."€"; ?> style="text-align: center;"></div>
                           <div style="text-align:center;"><input type='submit' name='ok' value='Confirm Order' class="btn btn-secondary" style="text-align: center; background-color: #14A098;"></div><br>
