@@ -1,6 +1,6 @@
 <?php
 include "config.php";
-$sql = "SELECT username, `date`, rating, heading, content  FROM group4_reviews INNER JOIN group4_accounts ON group4_reviews.user_id = group4_accounts.userId ORDER BY `date` DESC";
+$sql = "SELECT Name, `date`, rating, heading, content  FROM group4_reviews INNER JOIN group4_accounts ON group4_reviews.user_id = group4_accounts.userId ORDER BY `date` DESC";
 
 $result = $mysqli -> query($sql);
 
