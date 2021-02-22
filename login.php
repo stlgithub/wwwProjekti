@@ -3,6 +3,7 @@ include "login.html";
 ?>
 
 <?php
+// jos signup painiketta painettu
 if (isset($_POST['signup'])){
   unset($error);
   $username = $mysqli -> real_escape_string(stripslashes(strip_tags($_POST["Susername"])));
@@ -11,6 +12,7 @@ if (isset($_POST['signup'])){
   
   $sql = 'SELECT * FROM group4_accounts WHERE Name = "'.$username.'"';
   $result = $mysqli->query($sql);
+  // jos käyttäjänimi on jo olemassa
   if ($result->num_rows > 0){
   $error = "This username is already taken!<br>";
   echo '<script type="text/javascript">';
@@ -20,6 +22,7 @@ if (isset($_POST['signup'])){
   else{
   $sql = 'SELECT * FROM group4_accounts WHERE Email = "'.$email.'"';
   $result = $mysqli->query($sql);
+  // jos sähköposti on jo olemassa
   if ($result->num_rows > 0){
   $error = "This email is being used by another account!<br>";
   echo '<script type="text/javascript">';
@@ -41,6 +44,7 @@ if (isset($_POST['signup'])){
      $_SESSION["userID"] = $LastId;
      $_SESSION["email"] = $email;
    }
+   // virhe havaittu käyttäjää tehdessä
    else{
      echo '<script type="text/javascript">';
      echo ' alert("Error creating account. Please try again later.")';
@@ -49,6 +53,7 @@ if (isset($_POST['signup'])){
   }
 }
 }
+// jos Login painiketta painettu
 else if (isset($_POST["login"])){
   $username = $mysqli -> real_escape_string(stripslashes(strip_tags($_POST["Lusername"])));
   $password = $mysqli -> real_escape_string($_POST["Lpassword"]);
@@ -60,6 +65,7 @@ else if (isset($_POST["login"])){
     echo ' alert("There is no account associated with this username!")';
     echo '</script>';
   }
+  // kun kirjautuminen onnistuu
   else{
     $sql = "SELECT * FROM group4_accounts WHERE Name = '".$username."'AND Password = '".$password."'";
     $result = $mysqli->query($sql);
@@ -73,6 +79,7 @@ else if (isset($_POST["login"])){
       $_SESSION["userID"] = $row[0];
       $_SESSION["email"] = $row[3];
     }
+    // jos käyttäjä antaa väärän käyttäjänimen tai salasanan
     else{
       $error2 = "Invalid username or password!<br>";
       echo '<script type="text/javascript">';
