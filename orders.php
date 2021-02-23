@@ -19,7 +19,7 @@ $stmt=mysqli_prepare($mysqli, $sql);
     echo '<script type="text/javascript">';
     echo ' alert("Your order has been completed!")';
     echo '</script>';
-        echo "<script> location.href='inde.html'; </script>";
+        echo "<script> location.href='index.html'; </script>";
         exit;
 
 
