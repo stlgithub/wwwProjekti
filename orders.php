@@ -17,9 +17,9 @@ $stmt=mysqli_prepare($mysqli, $sql);
     mysqli_stmt_close($stmt);
     mysqli_close($mysqli);
     echo '<script type="text/javascript">';
-    echo ' alert("Your order has been completed!.")';
+    echo ' alert("Your order has been completed!")';
     echo '</script>';
-        echo "<script> location.href='shoppingcart.php'; </script>";
+        echo "<script> location.href='inde.html'; </script>";
         exit;
 
 
