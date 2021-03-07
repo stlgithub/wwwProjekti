@@ -10,6 +10,7 @@ $total_price=$_POST["total_price"];
 $quantity=$_POST["quantity"];
 $product_name=$_POST["product_name"];
 
+if ($name && $address && $total_price && $quantity && $product_name){
 $sql="insert into group4_orders(Name, Address, ProductID, Quantity, Value) values(?, ?, ?, ?, ?)";
 $stmt=mysqli_prepare($mysqli, $sql);
 	mysqli_stmt_bind_param($stmt, 'sssss', $name, $address, $product_name, $quantity, $total_price);
@@ -21,6 +22,14 @@ $stmt=mysqli_prepare($mysqli, $sql);
     echo '</script>';
         echo "<script> location.href='index.html'; </script>";
         exit;
+    }
+    else{
+        echo '<script type="text/javascript">';
+        echo 'alert("Fill in all fields")';
+        echo '</script>';
+    
+      exit;
+    }
 
 
 ?>
